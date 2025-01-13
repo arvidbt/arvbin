@@ -1,17 +1,20 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Poppins, Bricolage_Grotesque } from "next/font/google"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 
-const fontSans = Geist({
+const fontSans = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ['normal', 'italic'],
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: '--font-sans'
 })
 
-const fontMono = Geist_Mono({
+const fontSerif = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-serif",
 })
+
 
 export default function RootLayout({
   children,
@@ -21,10 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${fontSans.variable} ${fontSerif.variable} font-sans antialiased `}
       >
         <Providers>{children}</Providers>
       </body>
     </html>
   )
 }
+
