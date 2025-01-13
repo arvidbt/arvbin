@@ -19,6 +19,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@catppuccin/tailwindcss": "^0.1.6",
     "@turbo/gen": "^2.2.3",
     "@types/node": "^22.9.0",
     "@types/react": "18.3.0",

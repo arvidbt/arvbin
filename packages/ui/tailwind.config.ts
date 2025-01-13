@@ -58,7 +58,7 @@ const config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, require("@catppuccin/tailwindcss")],
 } satisfies Config
 
 export default config
