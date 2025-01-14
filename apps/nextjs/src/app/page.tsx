@@ -1,16 +1,9 @@
-import { Suspense } from "react";
-
 import { api, HydrateClient } from "~/trpc/server";
 import { AuthShowcase } from "./_components/auth-showcase";
-import {
-  CreatePostForm,
-  PostCardSkeleton,
-  PostList,
-} from "./_components/posts";
 
 export default function HomePage() {
   // You can await this here if you don't want to show Suspense fallback below
-  void api.post.all.prefetch();
+  // void api.post.all.prefetch();
 
   return (
     <HydrateClient>
@@ -21,8 +14,8 @@ export default function HomePage() {
           </h1>
           <AuthShowcase />
 
-          <CreatePostForm />
-          <div className="w-full max-w-2xl overflow-y-scroll">
+          {/* <CreatePostForm /> */}
+          {/* <div className="w-full max-w-2xl overflow-y-scroll">
             <Suspense
               fallback={
                 <div className="flex w-full flex-col gap-4">
@@ -34,7 +27,7 @@ export default function HomePage() {
             >
               <PostList />
             </Suspense>
-          </div>
+          </div> */}
         </div>
       </main>
     </HydrateClient>
