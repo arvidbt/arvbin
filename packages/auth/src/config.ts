@@ -8,7 +8,12 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import Discord from "next-auth/providers/discord";
 
 import { db } from "@arvbin/db/client";
-import { Account, Session, User } from "@arvbin/db/schema";
+import {
+  accounts,
+  sessions,
+  users,
+  verificationTokens,
+} from "@arvbin/db/schema";
 
 import { env } from "../env";
 
@@ -21,9 +26,10 @@ declare module "next-auth" {
 }
 
 const adapter = DrizzleAdapter(db, {
-  usersTable: User,
-  accountsTable: Account,
-  sessionsTable: Session,
+  usersTable: users,
+  accountsTable: accounts,
+  sessionsTable: sessions,
+  verificationTokensTable: verificationTokens,
 });
 
 export const isSecureContext = env.NODE_ENV !== "development";

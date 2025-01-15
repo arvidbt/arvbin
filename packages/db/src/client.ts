@@ -1,10 +1,9 @@
-import { sql } from "@vercel/postgres";
-import { drizzle } from "drizzle-orm/vercel-postgres";
+import Database from "better-sqlite3";
+import { drizzle } from "drizzle-orm/better-sqlite3";
 
+import { env } from "../env";
 import * as schema from "./schema";
 
-export const db = drizzle({
-  client: sql,
-  schema,
-  casing: "snake_case",
-});
+const sqlite = new Database(env.DATABASE_URL);
+
+export const db = drizzle({ client: sqlite, schema: schema });
