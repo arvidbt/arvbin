@@ -31,10 +31,7 @@
   },
   "dependencies": {
     "@auth/drizzle-adapter": "1.7.4",
-    "@libsql/client": "^0.14.0",
-    "@vercel/postgres": "^0.10.0",
-    "better-sqlite3": "^11.7.2",
-    "dotenv": "^16.4.7",
+    "better-sqlite3": "^11.8.0",
     "drizzle-orm": "^0.38.3",
     "drizzle-zod": "^0.5.1",
     "zod": "catalog:"
@@ -44,7 +41,6 @@
     "@arvbin/prettier-config": "workspace:*",
     "@arvbin/tsconfig": "workspace:*",
     "@types/better-sqlite3": "^7.6.12",
-    "dotenv-cli": "^7.4.4",
     "drizzle-kit": "^0.28.1",
     "eslint": "catalog:",
     "prettier": "catalog:",

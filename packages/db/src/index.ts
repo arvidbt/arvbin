@@ -1,2 +1,5 @@
-export * from "drizzle-orm/sql";
-export { alias } from "drizzle-orm/sqlite-core";
+import { db } from "./client";
+
+export * from "drizzle-orm/better-sqlite3";
+
+export { db };

@@ -1,5 +1,9 @@
-import { drizzle } from "drizzle-orm/libsql/node";
+import Database from "better-sqlite3";
+import { drizzle } from "drizzle-orm/better-sqlite3";
 
 import { env } from "../env";
+import * as schema from "./schema";
 
-export const db = drizzle(env.DATABASE_URL);
+const sqlite = new Database(env.DATABASE_URL);
+
+export const db = drizzle({ client: sqlite, schema: schema });
